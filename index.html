@@ -11,6 +11,12 @@
     <!-- Header -->
     <div class="header">
       <div class="logo">PSGALAXY</div>
+      <!-- Hamburger Icon -->
+      <div class="hamburger" id="hamburger-menu" aria-label="Open menu" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <nav>
         <a href="products.html" class="active">Products</a>
         <a href="#">Catalogue</a>
@@ -18,6 +24,11 @@
         <a href="#">Contact</a>
       </nav>
       <a href="#" class="signup-btn">Sign Up</a>
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav" id="mobile-nav">
+        <a href="products.html">Products</a>
+        <a href="#" class="signup-btn">Sign Up</a>
+      </div>
     </div>
 
     <!-- Products Content -->
@@ -35,5 +46,16 @@
   </div>
   <!-- Jotform Agent Chatbot Script -->
   <script src='https://cdn.jotfor.ms/agent/embedjs/01983b32430473e39d1fb11b8dff9e118747/embed.js?skipWelcome=1&maximizable=1'></script>
+  <script>
+    const hamburger = document.getElementById('hamburger-menu');
+    const mobileNav = document.getElementById('mobile-nav');
+    document.addEventListener('click', function(e) {
+      if (hamburger.contains(e.target)) {
+        mobileNav.classList.toggle('open');
+      } else if (!mobileNav.contains(e.target)) {
+        mobileNav.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html> 
